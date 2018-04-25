@@ -9,7 +9,7 @@ RUN apk --update add wget bash tzdata \
     && cp /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 ENV HADOOP_VERSION=2.7.4
-ENV HADOOP_PACKAGE hadoop-${HADOOP_VERSION}
+ENV HADOOP_PACKAGE=hadoop-${HADOOP_VERSION}
 ENV HADOOP_HOME=/usr/hadoop
 ENV PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 RUN wget http://www.apache.org/dist/hadoop/common/${HADOOP_PACKAGE}/${HADOOP_PACKAGE}.tar.gz && \
