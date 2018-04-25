@@ -12,8 +12,8 @@ ENV HADOOP_VERSION=2.7.4
 ENV HADOOP_PACKAGE=hadoop-${HADOOP_VERSION}
 ENV HADOOP_HOME=/usr/hadoop
 ENV PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
-RUN wget http://www.apache.org/dist/hadoop/common/${HADOOP_PACKAGE}/${HADOOP_PACKAGE}.tar.gz && \
-    tar -xzvf $HADOOP_PACKAGE.tar.gz && \
+RUN wget http://www.apache.org/dist/hadoop/common/${HADOOP_PACKAGE}/${HADOOP_PACKAGE}.tar.gz 
+RUN tar -xzvf $HADOOP_PACKAGE.tar.gz && \
     mv $HADOOP_PACKAGE /usr/hadoop && \
     rm $HADOOP_PACKAGE.tar.gz && \
     mkdir -p /root/hadoop/tmp && \
