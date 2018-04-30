@@ -15,10 +15,9 @@ ENV PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 RUN wget http://www.apache.org/dist/hadoop/common/${HADOOP_PACKAGE}/${HADOOP_PACKAGE}.tar.gz 
 RUN tar -xzvf $HADOOP_PACKAGE.tar.gz && \
     mv $HADOOP_PACKAGE /usr/hadoop && \
-    rm $HADOOP_PACKAGE.tar.gz && \
-    mkdir -p /tmp/dfs/name && \
-    mkdir -p /tmp/dfs/data && \
-    mkdir $HADOOP_HOME/logs && \
-    $HADOOP_HOME/bin/hadoop namenode -format
+    rm $HADOOP_PACKAGE.tar.gz 
+COPY ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
+RUN chmod a+x /usr/bin/docker-entrypoint.sh
 
-WORKDIR $HADOOP_HOME
+WORKDIR ${HADOOP_HOME}
+ENTRYPOINT ["docker-entrypoint.sh"]
