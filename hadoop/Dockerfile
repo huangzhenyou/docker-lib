@@ -16,10 +16,8 @@ RUN wget http://www.apache.org/dist/hadoop/common/${HADOOP_PACKAGE}/${HADOOP_PAC
 RUN tar -xzvf $HADOOP_PACKAGE.tar.gz && \
     mv $HADOOP_PACKAGE /usr/hadoop && \
     rm $HADOOP_PACKAGE.tar.gz && \
-    mkdir -p /root/hadoop/tmp && \
-    mkdir -p /root/hadoop/var && \
-    mkdir -p /root/hadoop/dfs/name && \
-    mkdir -p /root/hadoop/dfs/data && \
+    mkdir -p /tmp/dfs/name && \
+    mkdir -p /tmp/dfs/name && \
     mkdir $HADOOP_HOME/logs && \
     $HADOOP_HOME/bin/hadoop namenode -format
 
