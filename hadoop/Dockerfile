@@ -21,6 +21,6 @@ RUN tar -xzvf $HADOOP_PACKAGE.tar.gz && \
     mkdir -p /root/hadoop/dfs/name && \
     mkdir -p /root/hadoop/dfs/data && \
     mkdir $HADOOP_HOME/logs && \
-    $HADOOP_HOME/bin/hdfs namenode -format
+    $HADOOP_HOME/bin/hadoop namenode -format
 
 WORKDIR $HADOOP_HOME
