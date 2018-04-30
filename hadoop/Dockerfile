@@ -17,7 +17,7 @@ RUN tar -xzvf $HADOOP_PACKAGE.tar.gz && \
     mv $HADOOP_PACKAGE /usr/hadoop && \
     rm $HADOOP_PACKAGE.tar.gz && \
     mkdir -p /tmp/dfs/name && \
-    mkdir -p /tmp/dfs/name && \
+    mkdir -p /tmp/dfs/data && \
     mkdir $HADOOP_HOME/logs && \
     $HADOOP_HOME/bin/hadoop namenode -format
 
